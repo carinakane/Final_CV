@@ -33,23 +33,23 @@ device = torch.device('cuda:{}'.format(gpu_ids[0]))
 
 # IF LOAD 
 
-generatorA = torch.load('/home/carinakane/computer_vision/final_project/carina_CycleGAN/checkpoints/20_net_G_AB.pth') 
-generatorB = torch.load('/home/carinakane/computer_vision/final_project/carina_CycleGAN/checkpoints/20_net_G_BA.pth')
-discriminatorA = torch.load('/home/carinakane/computer_vision/final_project/carina_CycleGAN/checkpoints/20_net_D_A.pth')
-discriminatorB = torch.load('/home/carinakane/computer_vision/final_project/carina_CycleGAN/checkpoints/20_net_D_B.pth')
+#generatorA = torch.load('/home/carinakane/computer_vision/final_project/carina_CycleGAN/checkpoints/20_net_G_AB.pth') 
+#generatorB = torch.load('/home/carinakane/computer_vision/final_project/carina_CycleGAN/checkpoints/20_net_G_BA.pth')
+#discriminatorA = torch.load('/home/carinakane/computer_vision/final_project/carina_CycleGAN/checkpoints/20_net_D_A.pth')
+#discriminatorB = torch.load('/home/carinakane/computer_vision/final_project/carina_CycleGAN/checkpoints/20_net_D_B.pth')
 
 model = CycleGAN()
-model.G_AB.load_state_dict(generatorA)
-model.G_BA.load_state_dict(generatorB)
-model.D_A.load_state_dict(discriminatorA)
-model.D_B.load_state_dict(discriminatorB)
+#model.G_AB.load_state_dict(generatorA)
+#model.G_BA.load_state_dict(generatorB)
+#model.D_A.load_state_dict(discriminatorA)
+#model.D_B.load_state_dict(discriminatorB)
 
-'''
+
 # Init Model with Weights 
 for param in model.parameters():
     if param.dim() > 1:
         init.normal_(param, std=0.02)
-'''
+
 
 model = model.to(device) 
 
